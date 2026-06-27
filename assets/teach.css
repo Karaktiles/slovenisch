@@ -1,0 +1,144 @@
+/* teach.css — shared stylesheet for all Slowenisch lessons & references.
+   Editorial / Tufte-inspired. Warm paper, generous measure, prints cleanly. */
+
+:root {
+  --paper: #faf6ee;
+  --ink: #1c1a17;
+  --muted: #6b655c;
+  --rule: #d9d1c4;
+  --accent: #9c2b1f;      /* slovenska rdeča — for Slovenian text & emphasis */
+  --accent-soft: #f0e3df;
+  --good: #2f6b3a;
+  --good-soft: #e3efe5;
+  --sans: "Helvetica Neue", Arial, sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.55;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.6rem 6rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* — Kopf — */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.6rem;
+}
+h1 {
+  font-size: 2.1rem;
+  line-height: 1.12;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.01em;
+}
+.lede {
+  font-size: 1.12rem;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0 0 2.2rem;
+}
+h2 {
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 2.8rem 0 0.9rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--rule);
+}
+h3 { font-size: 1.15rem; font-weight: 600; margin: 1.8rem 0 0.4rem; }
+p { margin: 0 0 1rem; }
+a { color: var(--accent); text-underline-offset: 2px; }
+
+/* — Slowenisch hervorheben — */
+.sl { color: var(--accent); font-weight: 600; font-style: normal; }
+.ipa { font-family: var(--sans); color: var(--muted); font-size: 0.92em; }
+.gloss { color: var(--muted); font-style: italic; }
+
+/* — Regel-/Merkkarten — */
+.card {
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 1.1rem 1.3rem;
+  margin: 1.2rem 0;
+}
+.card.rule { border-left: 4px solid var(--accent); }
+.card .tag {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* — Wort-Paar-Tabelle (geschrieben → gesprochen) — */
+table.sound { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 1rem; }
+table.sound th {
+  font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted); text-align: left;
+  padding: 0.3rem 0.6rem; border-bottom: 1px solid var(--rule);
+}
+table.sound td { padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--rule); vertical-align: baseline; }
+table.sound td:first-child { font-weight: 600; color: var(--accent); }
+
+/* — Quiz (siehe quiz.js) — */
+.quiz { margin: 1.4rem 0; }
+.quiz .q {
+  background: #fff; border: 1px solid var(--rule); border-radius: 6px;
+  padding: 1.1rem 1.3rem; margin: 0.9rem 0;
+}
+.quiz .prompt { font-weight: 600; margin-bottom: 0.8rem; }
+.quiz .opts { display: flex; flex-direction: column; gap: 0.5rem; }
+.quiz button.opt {
+  font-family: var(--serif); font-size: 1rem; text-align: left;
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 5px;
+  padding: 0.55rem 0.8rem; cursor: pointer; transition: background 0.12s, border-color 0.12s;
+}
+.quiz button.opt:hover { border-color: var(--accent); }
+.quiz button.opt.correct { background: var(--good-soft); border-color: var(--good); color: var(--good); }
+.quiz button.opt.wrong   { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.quiz .fb { font-size: 0.95rem; margin-top: 0.7rem; min-height: 1.2em; color: var(--muted); }
+.quiz .fb.show { color: var(--ink); }
+
+/* — Flip-Karten (Selbsttest: erst denken, dann aufdecken) — */
+.flip {
+  display: inline-block; background: #fff; border: 1px solid var(--rule);
+  border-radius: 6px; padding: 0.5rem 0.9rem; margin: 0.3rem 0.3rem 0.3rem 0;
+  cursor: pointer; user-select: none;
+}
+.flip .back { display: none; color: var(--accent); font-weight: 600; }
+.flip.open .front { display: none; }
+.flip.open .back { display: inline; }
+
+/* — Fußzeile / Quellen — */
+.footer { margin-top: 3.5rem; padding-top: 1.2rem; border-top: 1px solid var(--rule);
+  font-size: 0.92rem; color: var(--muted); }
+.footer a { color: var(--accent); }
+.ask { background: var(--accent-soft); border-radius: 6px; padding: 0.9rem 1.1rem;
+  font-size: 0.95rem; margin-top: 1.6rem; }
+
+@media print {
+  body { background: #fff; max-width: 100%; font-size: 12pt; padding: 1cm; }
+  .quiz button.opt, .flip { border: 1px solid #999; }
+  .flip .back { display: inline; }
+  .flip .front { display: none; }
+  a { color: var(--ink); text-decoration: none; }
+}
