@@ -12,6 +12,7 @@ Slowenisch war Sebs erste Sprache als Kind, ist aber über die Jahre verkümmert
 ## Constraints
 - **Heritage Speaker, kein Anfänger:** starkes passives Verständnis, schwache aktive Produktion. Lektionen müssen Produktion (Sprechen, Lesen, Aussprache) trainieren, nicht Verständnis von Null aufbauen.
 - **Immersiv:** so viel Slowenisch wie möglich im Material, Deutsch nur als Hilfsbrücke. Siehe [NOTES.md](./NOTES.md).
+- **Variante: Hochslowenisch (knjižna slovenščina)** — auf Empfehlung der Mutter. Kein Heimat-Dialekt. Fürs Sprechen das Standard-Umgangsregister (knjižni pogovorni jezik).
 - Muttersprache Deutsch (Vorarlberg, Österreich).
 
 ## Out of scope
@@ -19,5 +20,5 @@ Slowenisch war Sebs erste Sprache als Kind, ist aber über die Jahre verkümmert
 - Schriftliches Verfassen / Rechtschreibung als Selbstzweck (erst mal Lesen + Sprechen)
 - Akademisches/literarisches Hochslowenisch — Fokus liegt auf Alltag und Familie
 
-## Offene Fragen
-- Aus welcher Region/welchem Dialekt stammt die Mutter? Slowenisch hat sehr starke Dialekte; der Heimat-Dialekt entscheidet, welche Aussprache sich "richtig" anfühlt. → zu klären, siehe [NOTES.md](./NOTES.md).
+## Geklärt
+- **Variante:** Hochslowenisch, nicht Heimat-Dialekt (von der Mutter empfohlen). Siehe Learning Record [0002](./learning-records/0002-hochslowenisch-standard.md).
