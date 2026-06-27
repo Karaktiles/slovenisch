@@ -4,6 +4,10 @@
 - **Muttersprache des Lernenden:** Deutsch (Vorarlberg, Österreich) — aber Slowenisch war die *erste* Sprache als Kind. Siehe Profil in `learning-records/0001`.
 - **Profil:** Heritage Speaker. Verstehen stark, Sprechen/Lesen schwach. Auf Produktion trainieren, nicht auf Verständnis. Niveau ruhig fordernd ansetzen.
 
+## Publishing (Handy-Zugang)
+- Repo ist **öffentlich**, ausgeliefert via **GitHub Pages** von `main` (root). Live: https://karaktiles.github.io/slovenisch/
+- **Workflow:** Neue Lektionen committen + nach `main` pushen → Seite aktualisiert sich automatisch (~1 Min). Lektionen immer in `index.html` verlinken.
+
 ## Offene Punkte / zu klären
 - **Heimat-Dialekt der Mutter?** Region in Slowenien noch unbekannt. Wichtig für „richtige" Aussprache. Bei Gelegenheit fragen.
 - Beim Transkribieren tauchte „etwas Luins sprechen" auf — vermutlich Versprecher/Transkriptionsfehler für „etwas Slowenisch". Nicht überinterpretieren.
