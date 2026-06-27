@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Besede">
+<meta name="theme-color" content="#faf6ee">
+<title>Besedišče — Vokabeltrainer</title>
+<link rel="stylesheet" href="assets/teach.css">
+<style>
+  .bar { display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; margin:1.2rem 0; }
+  .bar select, .bar button.ctl {
+    font-family:var(--sans); font-size:0.9rem; padding:0.45rem 0.7rem;
+    border:1px solid var(--rule); border-radius:6px; background:#fff; color:var(--ink); cursor:pointer;
+  }
+  .stats { font-family:var(--sans); font-size:0.8rem; color:var(--muted); margin-left:auto; text-align:right; }
+  .stats b { color:var(--accent); }
+  #card {
+    background:#fff; border:1px solid var(--rule); border-radius:10px;
+    min-height:13rem; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:2rem 1.2rem; cursor:pointer; user-select:none; margin:0.5rem 0 1rem;
+  }
+  #themeLabel { font-family:var(--sans); font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:0.8rem; }
+  #prompt { font-size:2.1rem; font-weight:600; line-height:1.15; }
+  .ans { margin-top:1.1rem; padding-top:1.1rem; border-top:1px solid var(--rule); width:100%; display:none; }
+  #card.show .ans { display:block; }
+  #answer { font-size:1.9rem; font-weight:600; color:var(--accent); }
+  #gender { font-family:var(--sans); font-size:0.95rem; color:var(--muted); margin-left:0.4rem; }
+  #forvo { display:inline-block; margin-top:0.6rem; font-family:var(--sans); font-size:0.85rem; }
+  #revealHint { font-family:var(--sans); font-size:0.8rem; color:var(--muted); margin-top:1.4rem; }
+  #buttons { display:flex; gap:0.8rem; }
+  #buttons button {
+    flex:1; font-family:var(--sans); font-size:1.05rem; font-weight:600; padding:0.9rem;
+    border-radius:8px; border:1px solid var(--rule); cursor:pointer;
+  }
+  #again { background:var(--accent-soft); border-color:var(--accent); color:var(--accent); }
+  #know  { background:var(--good-soft);  border-color:var(--good);   color:var(--good); }
+  .hint { font-family:var(--sans); font-size:0.78rem; color:var(--muted); text-align:center; margin-top:0.9rem; }
+</style>
+</head>
+<body>
+<p class="eyebrow">Besedišče</p>
+<h1>Vokabeltrainer</h1>
+<p class="lede">Schnelles, zufälliges Abrufen zum Auffrischen. Karte antippen zum Aufdecken, dann <span class="sl">Znam</span> (kann ich) oder <span class="sl">Spet</span> (nochmal). Was du kannst, kommt seltener.</p>
+
+<div class="bar">
+  <select id="theme" aria-label="Thema"></select>
+  <button class="ctl" id="dirBtn" title="Richtung umschalten">DE → SL</button>
+  <button class="ctl" id="reset" title="Fortschritt zurücksetzen">↺</button>
+  <span class="stats">abgefragt <b id="seen">0</b> · gekonnt <b id="known">0</b><br>gefestigt <b id="mastered">0</b></span>
+</div>
+
+<div id="card">
+  <div id="themeLabel"></div>
+  <div id="prompt"></div>
+  <div class="ans">
+    <span id="answer"></span><span id="gender"></span>
+    <div><a id="forvo" href="#" target="_blank" rel="noopener">🔊 poslušaj (Forvo)</a></div>
+  </div>
+  <div id="revealHint">tippen zum Aufdecken &nbsp;·&nbsp; <span style="opacity:.7">Leertaste</span></div>
+</div>
+
+<div id="buttons" style="visibility:hidden">
+  <button id="again">Spet · nochmal</button>
+  <button id="know">Znam · kann ich</button>
+</div>
+<p class="hint">Tastatur: <b>Leertaste</b> aufdecken · <b>1</b>/← nochmal · <b>2</b>/→ kann ich</p>
+
+<div class="ask" style="margin-top:2rem">
+<strong>Hinweis:</strong> Geschlecht steht hinter dem Wort (<span class="sl">m./ž./s.</span>). Kommt dir ein Wort falsch vor? Sag's mir — ich korrigiere die Liste. Mehr Wörter zu einem Thema (z. B. für die Kinder)? Auch sagen.
+</div>
+
+<div class="footer">
+<p><strong>Quelle:</strong> Standard-Slowenisch (Basis <a href="https://fran.si/">Fran/SSKJ</a>), Aussprache pro Wort via <a href="https://forvo.com/languages/sl/">Forvo</a>. Druckbares Glossar: <a href="reference/0004-besedisce.html">Besedišče (Glossar)</a>.</p>
+<p><a href="index.html">← Domov</a></p>
+</div>
+
+<script src="assets/vocab-data.js"></script>
+<script src="assets/vocab.js"></script>
+</body>
+</html>

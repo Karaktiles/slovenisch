@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Referenca: Besedišče — Glossar</title>
+<link rel="stylesheet" href="../assets/teach.css">
+<style>
+  .gloss-group { margin:1.8rem 0; break-inside:avoid; }
+  .gloss-group h3 { border-bottom:1px solid var(--rule); padding-bottom:0.3rem; }
+  table.voc { width:100%; border-collapse:collapse; font-size:0.98rem; }
+  table.voc td { padding:0.3rem 0.5rem; border-bottom:1px solid var(--rule); vertical-align:baseline; }
+  table.voc td.w { color:var(--accent); font-weight:600; white-space:nowrap; }
+  table.voc td.g { font-family:var(--sans); font-size:0.8rem; color:var(--muted); width:1.6rem; }
+  @media (min-width:34rem){ table.voc { font-size:1rem; } }
+</style>
+</head>
+<body>
+<p class="eyebrow">Referenca · Glossar</p>
+<h1>Besedišče</h1>
+<p class="lede">Der gesamte Wortschatz des <a href="../vocab.html">Vokabeltrainers</a>, nach Themen geordnet — zum Nachschlagen und Ausdrucken.</p>
+<p class="gloss" id="count"></p>
+
+<div id="groups"></div>
+
+<div class="footer">
+<p><strong>Quelle:</strong> Standard-Slowenisch (Basis <a href="https://fran.si/">Fran/SSKJ</a>). Geschlecht: m. = männlich, ž. = weiblich, s. = sächlich. Aussprache pro Wort: <a href="https://forvo.com/languages/sl/">Forvo</a>.</p>
+<p><a href="../vocab.html">→ Vokabeltrainer</a> · <a href="../index.html">Domov</a></p>
+</div>
+
+<script src="../assets/vocab-data.js"></script>
+<script>
+  document.getElementById("count").textContent = VOCAB.length + " Wörter · " + Object.keys(THEMES).length + " Themen";
+  const groups = document.getElementById("groups");
+  for (const key in THEMES) {
+    const words = VOCAB.filter((w) => w.t === key).sort((a, b) => a.sl.localeCompare(b.sl, "sl"));
+    if (!words.length) continue;
+    const div = document.createElement("div");
+    div.className = "gloss-group";
+    let rows = words.map((w) =>
+      `<tr><td class="w">${w.sl}</td><td class="g">${w.g ? w.g + "." : ""}</td><td>${w.de}</td></tr>`
+    ).join("");
+    div.innerHTML = `<h3>${THEMES[key]}</h3><table class="voc">${rows}</table>`;
+    groups.appendChild(div);
+  }
+</script>
+</body>
+</html>
